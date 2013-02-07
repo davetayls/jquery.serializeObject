@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Serialize Form to Object Test Suite</title>
+  <!-- Load local jQuery. This can be overridden with a ?jquery=___ param. -->
+  <script src="../libs/jquery-loader.js"></script>
+  <!-- Load local QUnit. -->
+  <link rel="stylesheet" href="../libs/qunit/qunit.css" media="screen">
+  <script src="../libs/qunit/qunit.js"></script>
+  <!-- Load local lib and tests. -->
+  <script src="../src/serializeObject.js"></script>
+  <script src="serializeObject_test.js"></script>
+  <!-- Removing access to jQuery and $. But it'll still be available as _$, if
+       you REALLY want to mess around with jQuery in the console. REMEMBER WE
+       ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
+  <script>window._$ = jQuery.noConflict(true);</script>
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture">
+    <form>
+      <input type="text" name="name.space.foo" value="foo" />
+      <input type="text" name="name.space.bar" value="bar" />
+      <input type="text" name="name.arr[0].space" value="foo" />
+      <input type="text" name="name.arr[1].space" value="foo" />
+      <input type="text" name="name.arr[2].space" value="foo" />
+      <input type="text" name="name.arr[3].space" value="foo" />
+      <input type="text" name="name.arr[4].space" value="foo" />
+    </form>
+  </div>
+</body>
+</html>
