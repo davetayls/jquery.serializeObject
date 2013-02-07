@@ -11,20 +11,39 @@ Download the [production version][min] or the [development version][max].
 In your web page:
 
 ```html
+<form ...>
+  <input type="text" name="name.space.foo" value="foo" />
+  <input type="text" name="name.space.bar" value="bar" />
+  <input type="text" name="name.arr[0].space" value="foo" />
+  <input type="text" name="name.arr[1].space" value="foo" />
+  <input type="text" name="name.arr[2].space" value="foo" />
+  <input type="text" name="name.arr[3].space" value="foo" />
+  <input type="text" name="name.arr[4].space" value="foo" />
+</form>
 <script src="jquery.js"></script>
 <script src="dist/serializeObject.min.js"></script>
 <script>
 jQuery(function($) {
-  $.awesome(); // "awesome"
+  $('form').serializeObject();
+  // -> {
+  //   name: {
+  //     space: {
+  //       foo: 'foo',
+  //       bar: 'bar'
+  //     },
+  //     arr: [
+  //       { space: 'foo' },
+  //       { space: 'foo' },
+  //       { space: 'foo' },
+  //       { space: 'foo' },
+  //       { space: 'foo' }
+  //     ]
+  //   }
+  // }
 });
 </script>
 ```
 
-## Documentation
-_(Coming soon)_
-
-## Examples
-_(Coming soon)_
-
 ## Release History
-_(Nothing yet)_
+
+### 0.1.0 Initial Release
