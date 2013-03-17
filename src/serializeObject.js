@@ -11,9 +11,7 @@
   $.fn.serializeObject = function() {
     var o = {};
     var a = this.serializeArray();
-    $.each(a, function() {
-        $.serializeObject.namespaceString(this.name, o, this.value);
-    });
+    $.serializeObject.serializeObjectInner(a, o);
     return o;
   };
 
@@ -25,9 +23,16 @@
   }
   function getSpaceIndex(space){
       RegExp.lastIndex = 0;
-      var matches = /.*\[(\d)\]/gi.exec(space);
+      var matches = /.*\[(\d+)\]/gi.exec(space);
       return matches ? matches[1] : null;
   }
+  
+  $.serializeObject.serializeObjectInner = function(a, o) {
+	    $.each(a, function() {
+	        $.serializeObject.namespaceString(this.name, o, this.value);
+	    });
+	    return o;
+  };
 
   /**
    * turns something like name.space.space into
