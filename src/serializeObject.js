@@ -1,10 +1,10 @@
 /*
-* serializeObject
-* https://github.com/davetayls/jquery.serializeObject
-*
-* Copyright (c) 2013 davetayls
-* Licensed under the MIT license.
-*/
+ * serializeObject
+ * https://github.com/davetayls/jquery.serializeObject
+ *
+ * Copyright (c) 2013 davetayls
+ * Licensed under the MIT license.
+ */
 (function($) {
 
   // Collection method.
