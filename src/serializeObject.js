@@ -1,6 +1,10 @@
-/*! Serialize Form to Object - v0.1.0 - 2013-02-07
+/*
+* serializeObject
 * https://github.com/davetayls/jquery.serializeObject
-* Copyright (c) 2013 davetayls; Licensed MIT */
+*
+* Copyright (c) 2013 davetayls
+* Licensed under the MIT license.
+*/
 (function($) {
 
   // Collection method.
