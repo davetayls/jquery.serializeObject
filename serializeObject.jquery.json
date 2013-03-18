@@ -2,7 +2,7 @@
   "name": "serializeObject",
   "title": "Serialize Form to Object",
   "description": "Serialize Form to Object including name.space.names",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/davetayls/jquery.serializeObject",
   "author": {
     "name": "davetayls",

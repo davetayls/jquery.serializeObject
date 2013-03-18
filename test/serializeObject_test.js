@@ -107,38 +107,38 @@
         ]
       }
     };
-    $form = this.elems.find('form');
+    var $form = this.elems.find('form');
     equal($form.length, 1);
     equal($form[0].tagName, 'FORM');
     deepEqual($form.serializeObject(), objExpected);
   });
-  
+
   test('issue#1: handle multiple digit indices', function(){
-	  var objExpected = {
-		cat: [
-		   {name:'cat1'},
-		   undefined,
-		   undefined,
-		   undefined,
-		   undefined,
-		   undefined,
-		   undefined,
-		   undefined,
-		   undefined,
-		   undefined,
-		   {name:'cat2'}
-		]
-	  };
-	var input = [
+    var objExpected = {
+    cat: [
+       {name:'cat1'},
+       undefined,
+       undefined,
+       undefined,
+       undefined,
+       undefined,
+       undefined,
+       undefined,
+       undefined,
+       undefined,
+       {name:'cat2'}
+    ]
+    };
+  var input = [
          { name:"cat[0].name", value:"cat1" },
          { name:"cat[10].name", value:"cat2" }
        ];
-	var out = {};
-  	$.serializeObject.serializeObjectInner(input, out);
-  	
-  	deepEqual(out, objExpected);
+  var out = {};
+    $.serializeObject.serializeObjectInner(input, out);
+
+    deepEqual(out, objExpected);
   });
-  
-  
+
+
 
 }(jQuery));

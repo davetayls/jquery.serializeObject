@@ -26,12 +26,12 @@
       var matches = /.*\[(\d+)\]/gi.exec(space);
       return matches ? matches[1] : null;
   }
-  
+
   $.serializeObject.serializeObjectInner = function(a, o) {
-	    $.each(a, function() {
-	        $.serializeObject.namespaceString(this.name, o, this.value);
-	    });
-	    return o;
+      $.each(a, function() {
+          $.serializeObject.namespaceString(this.name, o, this.value);
+      });
+      return o;
   };
 
   /**
